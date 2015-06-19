@@ -14,6 +14,11 @@ class L298
 {
 	public:
 		L298(int pin1, int pin2, int pinEnable);
+		void setPower(int power);
+	private:
+		int _pin1;
+		int _pin2;
+		int _pinEnable;
 };
 
 

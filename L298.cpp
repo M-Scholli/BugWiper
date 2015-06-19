@@ -16,3 +16,8 @@ L298::L298(int pin1, int pin2, int pinEnable){
 	_pin2=pin2;
 	_pinEnable=pinEnable;
 }
+
+void setPower(int power){
+	analogWrite(_pinEnable, power);
+}
+
