@@ -5,5 +5,5 @@
  *      Author: Moritz Scholjegerdes
  */
 
-#includ	"L298.h"
-
+#include "L298.h"
+#include "Arduino.h"

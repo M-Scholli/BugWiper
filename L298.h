@@ -8,7 +8,7 @@
 #ifndef L298_H_
 #define L298_H_
 
-
+#include "Arduino.h"
 
 
 #endif /* L298_H_ */
