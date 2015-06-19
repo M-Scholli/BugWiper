@@ -8,7 +8,8 @@
 #include "L298.h"
 #include "Arduino.h"
 
-L298::L298(int pin1, int pin2, int pinEnable){
+L298::L298(int pin1, int pin2, int pinEnable)
+{
 	pinMode(pin1, OUTPUT);
 	pinMode(pin2, OUTPUT);
 	pinMode(pinEnable, OUTPUT);
@@ -17,7 +18,25 @@ L298::L298(int pin1, int pin2, int pinEnable){
 	_pinEnable=pinEnable;
 }
 
-void setPower(int power){
+void L298::setPower(int power)
+{
 	analogWrite(_pinEnable, power);
 }
 
+void L298::forward()
+{
+	digitalWrite(_pin1, LOW);
+	digitalWrite(_pin2, HIGH);
+}
+
+void L298::reverse()
+{
+	digitalWrite(_pin1, HIGH);
+	digitalWrite(_pin2, LOW);
+}
+
+void L298::stop()
+{
+	digitalWrite(_pin1, LOW);
+	digitalWrite(_pin2, LOW);
+}
