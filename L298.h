@@ -10,5 +10,11 @@
 
 #include "Arduino.h"
 
+class L298
+{
+	public:
+		L298(int pin1, int pin2, int pinEnable);
+};
+
 
 #endif /* L298_H_ */
