@@ -6,8 +6,6 @@
 #include "TimerOne.h"
 
 
-int every_x_millis=10;
-
 L298 	motor(PIN_OUT_1, PIN_OUT_2, PIN_ENABLE);
 Button	tie_up(PIN_TIE_UP, DEBOUNCE_T, LONG_PRESS_T);
 Button  wipe(PIN_WIPE, DEBOUNCE_T, LONG_PRESS_T);
@@ -24,7 +22,7 @@ void setup()
 // Add your initialization code here
 motor.stop();
 motor.setPower(0);
-Timer1.initialize(every_x_millis*1000);
+Timer1.initialize(EVERY_X_MILLIS*1000);
 Timer1.attachInterrupt(buttonsRead);
 }
 
