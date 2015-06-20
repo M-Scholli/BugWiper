@@ -13,16 +13,15 @@
 class L298
 {
 	public:
-		L298(int pin1, int pin2, int pinEnable);
-		void setPower(int power);
+		L298(byte pin1, byte pin2, byte pinEnable);
+		void setPower(int power);	// power from 0 to 255
 		void forward();
 		void reverse();
 		void stop();
 	private:
-		int _pin1;
-		int _pin2;
-		int _pinEnable;
+		byte _pin1;
+		byte _pin2;
+		byte _pinEnable;
 };
-
 
 #endif /* L298_H_ */

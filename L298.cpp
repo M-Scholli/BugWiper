@@ -8,7 +8,7 @@
 #include "L298.h"
 #include "Arduino.h"
 
-L298::L298(int pin1, int pin2, int pinEnable)
+L298::L298(byte pin1, byte pin2, byte pinEnable)
 {
 	pinMode(pin1, OUTPUT);
 	pinMode(pin2, OUTPUT);
