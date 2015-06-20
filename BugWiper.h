@@ -9,6 +9,9 @@
 
 //add your includes for the project BugWiper here
 
+//EEPROM declarations:
+#define EE_DIRECTION	1
+
 // Time declarations:
 // Times for Button.h in milliseconds
 #define DEBOUNCE_T		70
