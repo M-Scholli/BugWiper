@@ -6,7 +6,6 @@
 
 #ifndef _BugWiper_H_
 #define _BugWiper_H_
-#include "Arduino.h"
 //add your includes for the project BugWiper here
 
 
