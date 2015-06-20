@@ -1,3 +1,6 @@
 .project
 .DS_Store
 .settings/*
+Release/*
+.cproject
+keywords.txt
