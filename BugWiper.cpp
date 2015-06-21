@@ -47,8 +47,8 @@ setup ()
 void
 loop ()
 {
-  if (wipe.button_pressed_long == 1)
+  if (wipe.button_pressed_long() == 1)
     {
-      full_wipe ();
+      fullWipe ();
     }
 }

@@ -9,13 +9,13 @@
 #include "Arduino.h"
 
 void
-full_wipe ()
+fullWipe ()
 {
 
 }
 
 void
-tie_up ()
+TieUp ()
 {
 
 }

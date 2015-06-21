@@ -9,9 +9,9 @@
 #define WIPE_H_
 
 void
-full_wipe ();
+fullWipe ();
 
 void
-tie_up ();
+TieUp ();
 
 #endif /* WIPE_H_ */
