@@ -2,6 +2,7 @@
 #include "BugWiper.h"
 #include "src/L298.h"
 #include "src/Button.h"
+#include "src/Wipe.h"
 #include "Arduino.h"
 #include "lib/TimerOne.h"
 #include "lib/EEPROM.h"
@@ -42,5 +43,7 @@ key_init();
 // The loop function is called in an endless loop
 void loop()
 {
-//Add your repeated code here
+	if(wipe.button_pressed_long == 1){
+		full_wipe();
+	}
 }
