@@ -47,11 +47,12 @@ setup ()
 void
 loop ()
 {
-  if (wipe.button_pressed_long () == 1)
+  if (wipe.button_pressed_long () == 1 && digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
       fullWipe ();
     }
-  else if (tie_up.button_pressed_short () == 1)
+  else if (tie_up.button_pressed_short ()
+      == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
       TieUp ();
     }

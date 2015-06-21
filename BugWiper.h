@@ -30,7 +30,7 @@
 //Keys without debounce
 #define KEY_TIGHT		6
 #define	KEY_LOCK		5
-
+#define UNLOCK_STATE		LOW
 //end of add your includes here
 
 #ifdef __cplusplus
