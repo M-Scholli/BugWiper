@@ -34,18 +34,18 @@
 //end of add your includes here
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
-void loop();
-void setup();
+  void
+  loop ();
+  void
+  setup ();
 #ifdef __cplusplus
 } // extern "C"
 #endif
 
 //add your function definitions for the project BugWiper here
-
-
-
 
 //Do not add code below this line
 #endif /* _BugWiper_H_ */

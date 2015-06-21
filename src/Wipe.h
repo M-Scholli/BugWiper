@@ -8,8 +8,10 @@
 #ifndef WIPE_H_
 #define WIPE_H_
 
-void full_wipe();
+void
+full_wipe ();
 
-void tie_up();
+void
+tie_up ();
 
 #endif /* WIPE_H_ */

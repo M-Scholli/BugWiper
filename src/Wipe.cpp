@@ -8,10 +8,14 @@
 #include "Wipe.h"
 #include "Arduino.h"
 
-void full_wipe(){
+void
+full_wipe ()
+{
 
 }
 
-void tie_up(){
+void
+tie_up ()
+{
 
 }

@@ -15,21 +15,23 @@
 
 class Button
 {
-	public:
-		Button(byte pin, unsigned int debounce_delay, unsigned int long_delay);
-		void check_button_state();
-		byte button_pressed_long();
-		byte button_pressed_short();
-	private:
-		byte _pin;
-		byte _button_press; // button is actual pressed
-		byte _long_pressed; 	// button was pressed long
-		byte _short_pressed;	// button was pressed short
-		unsigned int _debounce_delay;
-		unsigned int _long_delay;
-		unsigned long time_of_last_press;
-		unsigned long time_since_last_press;
+public:
+  Button (byte pin, unsigned int debounce_delay, unsigned int long_delay);
+  void
+  check_button_state ();
+  byte
+  button_pressed_long ();
+  byte
+  button_pressed_short ();
+private:
+  byte _pin;
+  byte _button_press; // button is actual pressed
+  byte _long_pressed; 	// button was pressed long
+  byte _short_pressed;	// button was pressed short
+  unsigned int _debounce_delay;
+  unsigned int _long_delay;
+  unsigned long time_of_last_press;
+  unsigned long time_since_last_press;
 };
-
 
 #endif /* BUTTON_H_ */
