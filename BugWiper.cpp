@@ -18,6 +18,15 @@ void buttonsRead()
 	wipe.check_button_state();
 }
 
+void key_init()
+{
+	pinMode(KEY_TIGHT, INPUT);
+	pinMode(KEY_LOCK, INPUT);
+	//activate pullups
+	digitalWrite(KEY_TIGHT, HIGH);
+	digitalWrite(KEY_LOCK, HIGH);
+}
+
 //The setup function is called once at startup of the sketch
 void setup()
 {
@@ -27,6 +36,7 @@ motor.stop();
 motor.setPower(0);
 Timer1.initialize(EVERY_X_MILLIS*1000);
 Timer1.attachInterrupt(buttonsRead);
+key_init();
 }
 
 // The loop function is called in an endless loop

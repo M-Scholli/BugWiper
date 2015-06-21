@@ -24,11 +24,12 @@
 #define PIN_OUT_1		7
 #define PIN_OUT_2		8
 #define PIN_ENABLE		9	//must a PWM-Pin
-//Buttons
+//Buttons with Buttons.h
 #define PIN_TIE_UP		10
 #define PIN_WIPE		11
-
-
+//Keys without debounce
+#define KEY_TIGHT		6
+#define	KEY_LOCK		5
 
 //end of add your includes here
 
