@@ -1,10 +1,10 @@
 // Do not remove the include below
 #include "BugWiper.h"
-#include "L298.h"
-#include "Button.h"
+#include "src/L298.h"
+#include "src/Button.h"
 #include "Arduino.h"
-#include "TimerOne.h"
-#include "EEPROM.h"
+#include "lib/TimerOne.h"
+#include "lib/EEPROM.h"
 
 byte motor_direction;
 
