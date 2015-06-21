@@ -47,8 +47,12 @@ setup ()
 void
 loop ()
 {
-  if (wipe.button_pressed_long() == 1)
+  if (wipe.button_pressed_long () == 1)
     {
       fullWipe ();
+    }
+  else if (tie_up.button_pressed_short () == 1)
+    {
+      TieUp ();
     }
 }
