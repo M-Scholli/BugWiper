@@ -50,10 +50,14 @@ loop ()
   if (wipe.button_pressed_long () == 1 && digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
       fullWipe ();
+      wipe.button_reset ();
+      tie_up.button_reset ();
     }
   else if (tie_up.button_pressed_short ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
       TieUp ();
+      wipe.button_reset ();
+      tie_up.button_reset ();
     }
 }

@@ -15,7 +15,7 @@ Button::Button (byte pin, unsigned int debounce_delay, unsigned int long_delay)
   _pin = pin;
   _debounce_delay = debounce_delay;
   _long_delay = long_delay;
-  _button_press = 0;
+  button_reset ();
 }
 
 void
@@ -63,4 +63,12 @@ Button::button_pressed_short ()
   pressed = _short_pressed;
   _short_pressed = 0;
   return pressed;
+}
+
+void
+Button::button_reset ()
+{
+  _long_pressed = 0;
+  _short_pressed = 0;
+  _button_press = 0;
 }

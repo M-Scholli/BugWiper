@@ -23,6 +23,8 @@ public:
   button_pressed_long ();
   byte
   button_pressed_short ();
+  void
+  button_reset ();
 private:
   byte _pin;
   byte _button_press; // button is actual pressed
