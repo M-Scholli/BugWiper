@@ -11,17 +11,16 @@
 class Wiper
 {
 public:
-  Wiper (L298 motor, int max_time_s, int min_time_s );
-  byte
-  wipe();
+  Wiper ();
   void
-  stop();
+  fullWipe ();
+  void
+  TieUp ();
 private:
   void
   read_direction ();
   void
-  update_direction();
+  update_direction ();
 };
-
 
 #endif /* WIPER_H_ */

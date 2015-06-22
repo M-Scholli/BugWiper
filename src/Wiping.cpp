@@ -22,15 +22,3 @@ Wiping::w_wiping (byte direction)
   byte safe = 0;
   return safe;
 }
-
-void
-fullWipe ()
-{
-
-}
-
-void
-TieUp ()
-{
-
-}

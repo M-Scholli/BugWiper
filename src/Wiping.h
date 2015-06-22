@@ -23,10 +23,4 @@ private:
   byte _t_max;
 };
 
-void
-fullWipe ();
-
-void
-TieUp ();
-
 #endif /* WIPE_H_ */

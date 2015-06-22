@@ -5,4 +5,22 @@
  *      Author: Moritz Scholjegerdes
  */
 
+#include "Wiper.h"
+#include "Arduino.h"
 
+Wiper::Wiper ()
+{
+
+}
+
+void
+Wiper::fullWipe ()
+{
+
+}
+
+void
+Wiper::TieUp ()
+{
+
+}
