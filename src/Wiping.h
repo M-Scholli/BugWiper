@@ -1,5 +1,5 @@
 /*
- * Wipe.h
+ * Wiping.h
  *
  *  Created on: 21.06.2015
  *      Author: Moritz Scholjegerdes

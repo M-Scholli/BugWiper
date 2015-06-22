@@ -1,11 +1,11 @@
 /*
- * Wipe.cpp
+ * Wiping.cpp
  *
  *  Created on: 21.06.2015
  *      Author: Moritz Scholjegerdes
  */
 
-#include "Wipe.h"
+#include "Wiping.h"
 #include "Arduino.h"
 
 void
