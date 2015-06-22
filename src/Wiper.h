@@ -15,9 +15,9 @@ class Wiper
 public:
   Wiper ();
   void
-  fullWipe (L298);
+  fullWipe (L298& motor_driver);
   void
-  TieUp (L298);
+  TieUp (L298& motor_driver);
 private:
   void
   read_direction ();

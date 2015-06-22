@@ -6,6 +6,7 @@
  */
 
 #include "Wiper.h"
+#include "Wiping.h"
 #include "Arduino.h"
 #include "L298.h"
 
@@ -15,13 +16,13 @@ Wiper::Wiper ()
 }
 
 void
-Wiper::fullWipe (L298)
+Wiper::fullWipe (L298& motor_driver)
 {
 
 }
 
 void
-Wiper::TieUp (L298)
+Wiper::TieUp (L298& motor_driver)
 {
 
 }
