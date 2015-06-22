@@ -10,14 +10,14 @@
 byte motor_direction;
 
 L298 motor (PIN_OUT_1, PIN_OUT_2, PIN_ENABLE);
-Button tie_up (PIN_TIE_UP, DEBOUNCE_T, LONG_PRESS_T);
-Button wipe (PIN_WIPE, DEBOUNCE_T, LONG_PRESS_T);
+Button b_tie_up (PIN_TIE_UP, DEBOUNCE_T, LONG_PRESS_T);
+Button b_wipe (PIN_WIPE, DEBOUNCE_T, LONG_PRESS_T);
 
 void
 buttonsRead ()
 {
-  tie_up.check_button_state ();
-  wipe.check_button_state ();
+  b_tie_up.check_button_state ();
+  b_wipe.check_button_state ();
 }
 
 void
@@ -47,17 +47,17 @@ setup ()
 void
 loop ()
 {
-  if (wipe.button_pressed_long () == 1 && digitalRead (KEY_LOCK) == UNLOCK_STATE)
+  if (b_wipe.button_pressed_long () == 1 && digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
       fullWipe ();
-      wipe.button_reset ();
-      tie_up.button_reset ();
+      b_wipe.button_reset ();
+      b_tie_up.button_reset ();
     }
-  else if (tie_up.button_pressed_short ()
+  else if (b_tie_up.button_pressed_short ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
       TieUp ();
-      wipe.button_reset ();
-      tie_up.button_reset ();
+      b_wipe.button_reset ();
+      b_tie_up.button_reset ();
     }
 }
