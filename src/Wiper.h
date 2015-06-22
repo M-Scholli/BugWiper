@@ -8,14 +8,16 @@
 #ifndef WIPER_H_
 #define WIPER_H_
 
+#include "L298.h"
+
 class Wiper
 {
 public:
   Wiper ();
   void
-  fullWipe ();
+  fullWipe (L298);
   void
-  TieUp ();
+  TieUp (L298);
 private:
   void
   read_direction ();

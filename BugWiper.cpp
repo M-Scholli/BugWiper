@@ -52,14 +52,14 @@ loop ()
   if (b_wipe.button_pressed_long ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
-      wiper_a.fullWipe ();
+      wiper_a.fullWipe (motor);
       b_wipe.button_reset ();
       b_tie_up.button_reset ();
     }
   else if (b_tie_up.button_pressed_short ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
-      wiper_a.TieUp ();
+      wiper_a.TieUp (motor);
       b_wipe.button_reset ();
       b_tie_up.button_reset ();
     }

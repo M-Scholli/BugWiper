@@ -7,6 +7,7 @@
 
 #include "Wiper.h"
 #include "Arduino.h"
+#include "L298.h"
 
 Wiper::Wiper ()
 {
@@ -14,13 +15,13 @@ Wiper::Wiper ()
 }
 
 void
-Wiper::fullWipe ()
+Wiper::fullWipe (L298)
 {
 
 }
 
 void
-Wiper::TieUp ()
+Wiper::TieUp (L298)
 {
 
 }
