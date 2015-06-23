@@ -9,6 +9,7 @@
 #define LED_H_
 
 #include "Arduino.h"
+#include "Time.h"
 
 class Led
 {
@@ -19,11 +20,19 @@ public:
   void
   off (void);
   void
-  blink (unsigned int duration);
-private:
+  blink_on (unsigned int duration);
   void
-  init (void);
+  blink_off (void);
+  void
+  refresh (void);
+  void
+  toggle (void);
+private:
   byte _pin;
+  byte blinking;  // 1 = Led is blinking mode
+  byte state;
+  unsigned int _duration; // time in milliseconds the led is on and off;
+  Time t_led;
 };
 
 #endif /* LED_H_ */

@@ -8,33 +8,59 @@
 #include "LED.h"
 
 #include "Arduino.h"
+#include "Time.h"
 
 Led::Led (byte pin)
 {
   _pin = pin;
-  init ();
+  blinking = 0;
+  pinMode (_pin, OUTPUT);
+  Time t_led;
+  state = 0;
 }
 
 void
 Led::on (void)
 {
   digitalWrite (_pin, HIGH);
+  state = 1;
 }
 
 void
 Led::off (void)
 {
   digitalWrite (_pin, LOW);
+  state = 0;
 }
 
 void
-Led::blink (unsigned int duration)
+Led::blink_on (unsigned int duration)
 {
-
+  blinking = 1;
+  t_led.restart ();
+  toggle ();
 }
 
 void
-Led::init (void)
+Led::blink_off (void)
 {
-  pinMode (_pin, OUTPUT);
+  blinking = 0;
+  off ();
+}
+
+void
+Led::refresh (void)
+{
+  if (blinking == 1 && t_led.t_since_start () >= _duration)
+    {
+      t_led.restart ();
+      toggle ();
+    }
+}
+
+void
+Led::toggle (void)
+{
+  digitalWrite (_pin, (state) ? HIGH : LOW);
+  state = !state;
 }
