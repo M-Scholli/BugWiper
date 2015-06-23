@@ -6,14 +6,16 @@
  */
 
 #include "Wiping.h"
+
 #include "Arduino.h"
 #include "../BugWiper.h"
 #include "L298.h"
 #include "Time.h"
 
-Wiping::Wiping (byte p_start, byte t_min, byte t_max)
+Wiping::Wiping (byte p_start, byte t_min, byte t_max, byte p_delay)
 {
   _p_start = p_start;
+  _p_delay = p_delay;
   _t_min = t_min;
   _t_max = t_max;
 }
@@ -23,8 +25,11 @@ Wiping::w_wiping (byte direction)
 {
   byte safe = 0;
   byte run = 1;
+  byte power = _p_start;
+  byte p = 0;
   Time t;
-  motor.setPower (_p_start);
+  Time t2;
+  motor.setPower (power);
   motor.setDirection (direction);
   while (run == 1)
     {
@@ -37,7 +42,13 @@ Wiping::w_wiping (byte direction)
 	  safe = 1;
 	  run = 0;
 	}
-      // to do: increase power to max during time
+      if (power < 255 && t2.t_since_start () >= _p_delay)
+	{
+	  t2.restart ();
+	  power++;
+	  motor.setPower (power);
+	}
+      //to do: add emergency stop and key override
     }
   return safe;
 }

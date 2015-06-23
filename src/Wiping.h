@@ -14,11 +14,12 @@
 class Wiping
 {
 public:
-  Wiping (byte p_start, byte t_min, byte t_max);
+  Wiping (byte p_start, byte t_min, byte t_max, byte p_delay);
   byte
   w_wiping (byte direction);
 private:
   byte _p_start;
+  byte _p_delay;
   byte _t_min;
   byte _t_max;
 };
