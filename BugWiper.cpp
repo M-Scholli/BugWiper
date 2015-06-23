@@ -6,7 +6,7 @@
 #include "src/Wiping.h"
 #include "src/Wiper.h"
 #include "Arduino.h"
-#include "lib/TimerOne.h"
+#include "lib/TimerOne/TimerOne.h"
 #include "lib/EEPROM.h"
 
 byte motor_direction;
