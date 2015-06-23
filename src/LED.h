@@ -14,6 +14,10 @@ class Led
 {
 public:
   Led (byte pin);
+  void
+  on (void);
+  void
+  off (void);
 private:
   void
   init (void);

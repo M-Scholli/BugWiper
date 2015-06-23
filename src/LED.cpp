@@ -16,6 +16,18 @@ Led::Led (byte pin)
 }
 
 void
+Led::on (void)
+{
+  digitalWrite (_pin, HIGH);
+}
+
+void
+Led::off (void)
+{
+  digitalWrite (_pin, LOW);
+}
+
+void
 Led::init (void)
 {
   pinMode (_pin, OUTPUT);
