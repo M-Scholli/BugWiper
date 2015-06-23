@@ -22,6 +22,8 @@ public:
   reverse ();
   void
   stop ();
+  void
+  setDirection (byte direction);
 private:
   byte _pin1;
   byte _pin2;

@@ -44,3 +44,18 @@ L298::stop ()
   digitalWrite (_pin1, LOW);
   digitalWrite (_pin2, LOW);
 }
+
+void
+L298::setDirection (byte direction)
+{
+  switch (direction)
+    {
+    case 1:
+      forward ();
+    case 2:
+      reverse ();
+    default:
+      stop ();
+    }
+
+}
