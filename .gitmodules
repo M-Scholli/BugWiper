@@ -1,0 +1,4 @@
+[submodule "lib/TimerThree"]
+	path = lib/TimerThree
+	url = https://github.com/PaulStoffregen/TimerThree
+	branch = master
