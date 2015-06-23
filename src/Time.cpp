@@ -39,3 +39,9 @@ Time::t_since_start (void)
   return t;
 }
 
+void
+Time::restart (void)
+{
+  t_start = millis ();
+}
+

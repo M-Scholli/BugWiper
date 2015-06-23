@@ -16,6 +16,8 @@ public:
   since_seconds (void);
   unsigned long
   t_since_start (void);
+  void
+  restart (void);
 private:
   unsigned long t_start;
 };
