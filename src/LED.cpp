@@ -6,3 +6,17 @@
  */
 
 #include "LED.h"
+
+#include "Arduino.h"
+
+Led::Led (byte pin)
+{
+  _pin = pin;
+  init ();
+}
+
+void
+Led::init (void)
+{
+  pinMode (_pin, OUTPUT);
+}

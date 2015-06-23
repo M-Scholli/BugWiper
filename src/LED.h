@@ -8,6 +8,16 @@
 #ifndef LED_H_
 #define LED_H_
 
+#include "Arduino.h"
 
+class Led
+{
+public:
+  Led (byte pin);
+private:
+  void
+  init (void);
+  byte _pin;
+};
 
 #endif /* LED_H_ */
