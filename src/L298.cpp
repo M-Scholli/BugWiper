@@ -7,6 +7,7 @@
 
 #include "L298.h"
 #include "Arduino.h"
+#include "../lib/TimerOne/TimerOne.h"
 
 L298::L298 (byte pin1, byte pin2, byte pinEnable)
 {
@@ -16,14 +17,28 @@ L298::L298 (byte pin1, byte pin2, byte pinEnable)
   _pin1 = pin1;
   _pin2 = pin2;
   _pinEnable = pinEnable;
+  pwm_init = 0;
 }
 
 void
-L298::setPower (int power)
+L298::setPower (byte power)
 {
   analogWrite (_pinEnable, power);
 }
 
+void
+L298::setPower_T1 (int power)
+{
+  if (pwm_init == 0)
+    {
+      Timer1.pwm (_pinEnable, power);
+      pwm_init = 1;
+    }
+  else
+    {
+      Timer1.setPwmDuty (_pinEnable, power);
+    }
+}
 void
 L298::forward ()
 {
