@@ -17,6 +17,7 @@ Led::Led (byte pin)
   pinMode (_pin, OUTPUT);
   Time t_led;
   state = 0;
+  _duration = 1000;
 }
 
 void
@@ -36,6 +37,7 @@ Led::off (void)
 void
 Led::blink_on (unsigned int duration)
 {
+  _duration = duration;
   blinking = 1;
   t_led.restart ();
   toggle ();
