@@ -16,13 +16,13 @@ Wiper::Wiper ()
 }
 
 void
-Wiper::fullWipe (L298& motor_driver)
+Wiper::fullWipe ()
 {
 
 }
 
 void
-Wiper::TieUp (L298& motor_driver)
+Wiper::TieUp ()
 {
 
 }

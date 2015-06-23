@@ -14,7 +14,7 @@
 class Wiping
 {
 public:
-  Wiping (L298, byte p_start, byte t_min, byte t_max);
+  Wiping (byte p_start, byte t_min, byte t_max);
   byte
   w_wiping (byte direction);
 private:
