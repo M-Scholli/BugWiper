@@ -2,3 +2,6 @@
 	path = lib/TimerThree
 	url = https://github.com/PaulStoffregen/TimerThree
 	branch = master
+[submodule "lib/TimerOne"]
+	path = lib/TimerOne
+	url = https://github.com/PaulStoffregen/TimerOne
