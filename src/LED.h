@@ -18,6 +18,8 @@ public:
   on (void);
   void
   off (void);
+  void
+  blink (unsigned int duration);
 private:
   void
   init (void);

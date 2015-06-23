@@ -28,6 +28,12 @@ Led::off (void)
 }
 
 void
+Led::blink (unsigned int duration)
+{
+
+}
+
+void
 Led::init (void)
 {
   pinMode (_pin, OUTPUT);
