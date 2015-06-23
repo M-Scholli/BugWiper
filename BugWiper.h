@@ -31,7 +31,8 @@
 #define KEY_TIGHT		6
 #define	KEY_LOCK		5
 #define UNLOCK_STATE		LOW
-//end of add your includes here
+
+#include "src/L298.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -45,7 +46,6 @@ extern "C"
 } // extern "C"
 #endif
 
-//add your function definitions for the project BugWiper here
+extern L298 motor;
 
-//Do not add code below this line
 #endif /* _BugWiper_H_ */

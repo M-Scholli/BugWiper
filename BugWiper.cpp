@@ -1,5 +1,6 @@
 // Do not remove the include below
 #include "BugWiper.h"
+
 #include "src/L298.h"
 #include "src/Button.h"
 #include "src/Wiping.h"
@@ -52,14 +53,14 @@ loop ()
   if (b_wipe.button_pressed_long ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
-      wiper_a.fullWipe (motor);
+      wiper_a.fullWipe ();
       b_wipe.button_reset ();
       b_tie_up.button_reset ();
     }
   else if (b_tie_up.button_pressed_short ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
-      wiper_a.TieUp (motor);
+      wiper_a.TieUp ();
       b_wipe.button_reset ();
       b_tie_up.button_reset ();
     }
