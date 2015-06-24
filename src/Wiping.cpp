@@ -29,12 +29,12 @@ Wiping::w_wiping (byte direction)
   byte p = 0;
   Time t;
   Time t2;
-  led1.blink_on (LED_BLINK_WIPE);
+  led1.blink_on(LED_BLINK_WIPE);
   motor.setPower (power);
   motor.setDirection (direction);
   while (run == 1)
     {
-      led1.refresh ();
+      led1.refresh();
       if (t.since_seconds () >= _t_max)
 	{
 	  run = 0;
@@ -52,6 +52,6 @@ Wiping::w_wiping (byte direction)
 	}
       //to do: add emergency stop and key override
     }
-  led1.blink_off ();
+  led1.blink_off();
   return safe;
 }
