@@ -15,6 +15,10 @@ class Wiping
 {
 public:
   Wiping (byte p_start, byte t_min, byte t_max, byte p_delay);
+  void
+  fullWipe ();
+  void
+  TieUp ();
   byte
   w_wiping (byte direction);
 private:

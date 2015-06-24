@@ -20,6 +20,38 @@ Wiping::Wiping (byte p_start, byte t_min, byte t_max, byte p_delay)
   _t_max = t_max;
 }
 
+void
+Wiping::fullWipe ()
+{
+  byte safe;
+  byte direction;
+  // to do: read direction
+  safe = w_wiping (direction);
+  if (safe == 0)
+    {
+      led1.on ();
+    }
+  else
+    {
+      // to do: toggle direction
+    }
+
+}
+
+void
+Wiping::TieUp ()
+{
+  byte safe;
+  byte direction;
+  // to do: read direction
+  safe = w_wiping (direction);
+  if (safe == 0)
+    {
+      led1.on ();
+    }
+}
+
+
 byte
 Wiping::w_wiping (byte direction)
 {

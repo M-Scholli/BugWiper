@@ -5,7 +5,6 @@
 #include "src/Button.h"
 #include "src/LED.h"
 #include "src/Wiping.h"
-#include "src/Wiper.h"
 #include "Arduino.h"
 #include "lib/TimerOne/TimerOne.h"
 #include "lib/EEPROM.h"
@@ -15,7 +14,6 @@ byte motor_direction;
 L298 motor (PIN_OUT_1, PIN_OUT_2, PIN_ENABLE);
 Button b_tie_up (PIN_TIE_UP, DEBOUNCE_T, LONG_PRESS_T);
 Button b_wipe (PIN_WIPE, DEBOUNCE_T, LONG_PRESS_T);
-Wiper wiper_a;
 Wiping full_wiping (W_P_START, W_T_MIN, W_T_MAX, W_P_DELAY);
 Wiping tieing_up (TU_P_START, TU_T_MIN, TU_T_MAX, TU_P_DELAY);
 Led led1 (PIN_LED_1);
@@ -57,14 +55,14 @@ loop ()
   if (b_wipe.button_pressed_long ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
-      wiper_a.fullWipe ();
+      full_wiping.fullWipe ();
       b_wipe.button_reset ();
       b_tie_up.button_reset ();
     }
   else if (b_tie_up.button_pressed_short ()
       == 1&& digitalRead (KEY_LOCK) == UNLOCK_STATE)
     {
-      wiper_a.TieUp ();
+      tieing_up.TieUp ();
       b_wipe.button_reset ();
       b_tie_up.button_reset ();
     }
