@@ -22,6 +22,7 @@ public:
   byte
   w_wiping (byte direction);
 private:
+  byte read_direction ();
   byte _p_start;
   byte _p_delay;
   byte _t_min;

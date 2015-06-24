@@ -9,6 +9,7 @@
 
 #include "Arduino.h"
 #include "../BugWiper.h"
+#include "../lib/EEPROM.h"
 #include "L298.h"
 #include "Time.h"
 
@@ -25,7 +26,7 @@ Wiping::fullWipe ()
 {
   byte safe;
   byte direction;
-  // to do: read direction
+  direction = read_direction ();
   safe = w_wiping (direction);
   if (safe == 0)
     {
@@ -86,4 +87,12 @@ Wiping::w_wiping (byte direction)
     }
   led1.blink_off();
   return safe;
+}
+
+byte
+Wiping::read_direction (void)
+{
+  byte direction;
+  direction = EEPROM.read (EE_DIRECTION);
+  return direction;
 }

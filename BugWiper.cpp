@@ -7,7 +7,6 @@
 #include "src/Wiping.h"
 #include "Arduino.h"
 #include "lib/TimerOne/TimerOne.h"
-#include "lib/EEPROM.h"
 
 byte motor_direction;
 
@@ -40,7 +39,6 @@ void
 setup ()
 {
 // Add your initialization code here
-  motor_direction = EEPROM.read (EE_DIRECTION);
   motor.stop ();
   motor.setPower (0);
   Timer1.initialize (EVERY_X_MILLIS * 1000);
