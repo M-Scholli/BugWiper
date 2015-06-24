@@ -31,8 +31,11 @@
 #define KEY_TIGHT		6
 #define	KEY_LOCK		5
 #define UNLOCK_STATE		LOW
+//LED
+#define PIN_LED_1		13
 
 #include "src/L298.h"
+#include "src/LED.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -47,5 +50,6 @@ extern "C"
 #endif
 
 extern L298 motor;
+extern Led led1;
 
 #endif /* _BugWiper_H_ */
