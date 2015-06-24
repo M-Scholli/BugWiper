@@ -26,6 +26,8 @@ private:
   read_direction ();
   void
   update_direction (byte direction);
+  byte
+  toggle_direction (byte direction);
   byte _p_start;
   byte _p_delay;
   byte _t_min;

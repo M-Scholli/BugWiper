@@ -34,7 +34,8 @@ Wiping::fullWipe ()
     }
   else
     {
-      // to do: toggle direction
+      direction = toggle_direction (direction);
+      update_direction (direction);
     }
 
 }
@@ -44,7 +45,8 @@ Wiping::TieUp ()
 {
   byte safe;
   byte direction;
-  // to do: read direction
+  direction = read_direction ();
+  direction = toggle_direction (direction);
   safe = w_wiping (direction);
   if (safe == 0)
     {
@@ -100,4 +102,22 @@ void
 Wiping::update_direction (byte direction)
 {
   EEPROM.updateByte (EE_DIRECTION, direction);
+}
+
+byte
+Wiping::toggle_direction (byte direction)
+{
+  if (direction == 1)
+    {
+      direction = 2;
+    }
+  else if (direction == 2)
+    {
+      direction = 1;
+    }
+  else
+    {
+      direction = 0;
+    }
+  return direction;
 }
