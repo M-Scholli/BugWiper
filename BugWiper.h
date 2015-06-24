@@ -15,9 +15,11 @@
 // Time declarations:
 // Times for Button.h in milliseconds
 #define DEBOUNCE_T		70
-#define LONG_PRESS_T	800
+#define LONG_PRESS_T		800
 // Time for Timer1
-#define EVERY_X_MILLIS	10
+#define EVERY_X_MILLIS		10
+// LED
+#define LED_BLINK_WIPE		300	// 0,3 seconds
 
 // Pin declaration:
 //L298
