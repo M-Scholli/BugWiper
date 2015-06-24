@@ -31,13 +31,26 @@
 #define PIN_WIPE		11
 //Keys without debounce
 #define KEY_TIGHT		6
-#define	KEY_LOCK		5
+#define KEY_LOCK		5
 #define UNLOCK_STATE		LOW
 //LED
 #define PIN_LED_1		13
 
+//Wiping declaration:
+//full_wiping
+#define W_P_START		130
+#define W_T_MIN			2
+#define W_T_MAX			35
+#define W_P_DELAY		60
+//tieing_up
+#define TU_P_START		250
+#define TU_T_MIN		1
+#define TU_T_MAX		15
+#define TU_P_DELAY		10
+
 #include "src/L298.h"
 #include "src/LED.h"
+#include "src/Wiping.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -53,5 +66,7 @@ extern "C"
 
 extern L298 motor;
 extern Led led1;
+extern Wiping full_wiping;
+extern Wiping tieing_up;
 
 #endif /* _BugWiper_H_ */
