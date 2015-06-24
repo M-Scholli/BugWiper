@@ -9,9 +9,9 @@
 
 #include "Arduino.h"
 #include "../BugWiper.h"
-#include "../lib/EEPROM.h"
 #include "L298.h"
 #include "Time.h"
+#include "../lib/EEPROMex/EEPROMex.h"
 
 Wiping::Wiping (byte p_start, byte t_min, byte t_max, byte p_delay)
 {
@@ -52,7 +52,6 @@ Wiping::TieUp ()
     }
 }
 
-
 byte
 Wiping::w_wiping (byte direction)
 {
@@ -62,12 +61,12 @@ Wiping::w_wiping (byte direction)
   byte p = 0;
   Time t;
   Time t2;
-  led1.blink_on(LED_BLINK_WIPE);
+  led1.blink_on (LED_BLINK_WIPE);
   motor.setPower (power);
   motor.setDirection (direction);
   while (run == 1)
     {
-      led1.refresh();
+      led1.refresh ();
       if (t.since_seconds () >= _t_max)
 	{
 	  run = 0;
@@ -85,7 +84,7 @@ Wiping::w_wiping (byte direction)
 	}
       //to do: add emergency stop and key override
     }
-  led1.blink_off();
+  led1.blink_off ();
   return safe;
 }
 
@@ -93,6 +92,12 @@ byte
 Wiping::read_direction (void)
 {
   byte direction;
-  direction = EEPROM.read (EE_DIRECTION);
+  direction = EEPROM.readByte (EE_DIRECTION);
   return direction;
+}
+
+void
+Wiping::update_direction (byte direction)
+{
+  EEPROM.updateByte (EE_DIRECTION, direction);
 }

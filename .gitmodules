@@ -1,3 +1,6 @@
 [submodule "lib/TimerOne"]
 	path = lib/TimerOne
 	url = https://github.com/PaulStoffregen/TimerOne
+[submodule "lib/EEPROMex"]
+	path = lib/EEPROMex
+	url = https://github.com/thijse/Arduino-EEPROMEx
