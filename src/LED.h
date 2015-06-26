@@ -9,7 +9,7 @@
 #define LED_H_
 
 #include "Arduino.h"
-#include "Time.h"
+#include "../lib/Timer/Timer.h"
 
 class Led
 {
@@ -32,7 +32,7 @@ private:
   byte blinking;  // 1 = Led is blinking mode
   byte state;
   unsigned int _duration; // time in milliseconds the led is on and off;
-  Time t_led;
+  Timer t_led;
 };
 
 #endif /* LED_H_ */

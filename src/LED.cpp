@@ -8,14 +8,14 @@
 #include "LED.h"
 
 #include "Arduino.h"
-#include "Time.h"
+#include "../lib/Timer/Timer.h"
 
 Led::Led (byte pin)
 {
   _pin = pin;
   blinking = 0;
   pinMode (_pin, OUTPUT);
-  Time t_led;
+  Timer t_led;
   state = 0;
   _duration = 1000;
 }

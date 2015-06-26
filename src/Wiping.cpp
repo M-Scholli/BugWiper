@@ -10,7 +10,7 @@
 #include "Arduino.h"
 #include "../BugWiper.h"
 #include "L298.h"
-#include "Time.h"
+#include "../lib/Timer/Timer.h"
 #include "../lib/EEPROMex/EEPROMex.h"
 
 Wiping::Wiping (byte p_start, byte t_min, byte t_max, byte p_delay)
@@ -61,8 +61,8 @@ Wiping::w_wiping (byte direction)
   byte run = 1;
   byte power = _p_start;
   byte p = 0;
-  Time t;
-  Time t2;
+  Timer t;
+  Timer t2;
   led1.blink_on (LED_BLINK_WIPE);
   motor.setPower (power);
   motor.setDirection (direction);
