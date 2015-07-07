@@ -23,15 +23,15 @@
 
 // Pin declaration:
 //L298
-#define PIN_OUT_1		7
-#define PIN_OUT_2		8
+#define PIN_OUT_1		11
+#define PIN_OUT_2		10
 #define PIN_ENABLE		9	//must a PWM-Pin
 //Buttons with Buttons.h
-#define PIN_TIE_UP		10
-#define PIN_WIPE		11
+#define PIN_TIE_UP		6
+#define PIN_WIPE		5
 //Keys without debounce
 #define KEY_TIGHT		6
-#define KEY_LOCK		5
+#define KEY_LOCK		4
 #define UNLOCK_STATE		LOW
 //LED
 #define PIN_LED_1		13
