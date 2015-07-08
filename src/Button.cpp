@@ -34,9 +34,18 @@ Button::check_button_state ()
       && t1.t_since_start () >= _debounce_delay)
     {
       if (t1.t_since_start () >= _long_delay)
-	_long_pressed = 1;
+	{
+	  _long_pressed = 1;
+	}
       else
-	_short_pressed = 1;
+	{
+	  _short_pressed = 1;
+	}
+      t1.restart ();
+      _button_press = 2;
+    }
+  if (t1.t_since_start () >= _debounce_delay && _button_press == 2)
+    {
       _button_press = 0;
     }
 }
