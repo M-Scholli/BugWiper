@@ -30,6 +30,12 @@ Button::check_button_state ()
       t1.restart ();
       _button_press = 1;
     }
+  if (t1.t_since_start () >= _long_delay && _button_press == 1
+      && long_first == 0)
+    {
+      long_press = 1;
+      long_first = 1;
+    }
   if (button_state == HIGH && _button_press == 1
       && t1.t_since_start () >= _debounce_delay)
     {
@@ -47,11 +53,12 @@ Button::check_button_state ()
   if (t1.t_since_start () >= _debounce_delay && _button_press == 2)
     {
       _button_press = 0;
+      long_first = 0;
     }
 }
 
 byte
-Button::button_pressed_long ()
+Button::button_pressed_long (void)
 {
   byte pressed;
   pressed = _long_pressed;
@@ -60,7 +67,16 @@ Button::button_pressed_long ()
 }
 
 byte
-Button::button_pressed_short ()
+Button::button_press_long (void)
+{
+  byte press;
+  press = long_press;
+  long_press = 0;
+  return press;
+}
+
+byte
+Button::button_pressed_short (void)
 {
   byte pressed;
   pressed = _short_pressed;
@@ -69,10 +85,11 @@ Button::button_pressed_short ()
 }
 
 void
-Button::button_reset ()
+Button::button_reset (void)
 {
   _long_pressed = 0;
   _short_pressed = 0;
   _button_press = 2;
-  t1.restart();
+  long_first = 0;
+  t1.restart ();
 }

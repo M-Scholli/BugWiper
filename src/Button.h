@@ -19,18 +19,22 @@ class Button
 public:
   Button (byte pin, unsigned int debounce_delay, unsigned int long_delay);
   void
-  check_button_state ();
+  check_button_state (void);
   byte
-  button_pressed_long ();
+  button_pressed_long (void);
   byte
-  button_pressed_short ();
+  button_press_long (void);
+  byte
+  button_pressed_short (void);
   void
-  button_reset ();
+  button_reset (void);
 private:
   byte _pin;
   byte _button_press; // button is actual pressed
   byte _long_pressed; 	// button was pressed long
   byte _short_pressed;	// button was pressed short
+  byte long_press; 	// button is pressing long
+  byte long_first;
   Timer t1;
   unsigned int _debounce_delay;
   unsigned int _long_delay;
