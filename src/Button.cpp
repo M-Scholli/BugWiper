@@ -73,6 +73,6 @@ Button::button_reset ()
 {
   _long_pressed = 0;
   _short_pressed = 0;
-  _button_press = 0;
-  button_state = 0;
+  _button_press = 2;
+  t1.restart();
 }
