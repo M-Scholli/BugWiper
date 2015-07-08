@@ -12,6 +12,7 @@
 #define BUTTON_H_
 
 #include "Arduino.h"
+#include "../lib/Timer/Timer.h"
 
 class Button
 {
@@ -30,10 +31,10 @@ private:
   byte _button_press; // button is actual pressed
   byte _long_pressed; 	// button was pressed long
   byte _short_pressed;	// button was pressed short
+  Timer t1;
   unsigned int _debounce_delay;
   unsigned int _long_delay;
-  unsigned long time_of_last_press;
-  unsigned long time_since_last_press;
+  boolean button_state;
 };
 
 #endif /* BUTTON_H_ */

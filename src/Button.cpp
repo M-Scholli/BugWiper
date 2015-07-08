@@ -7,6 +7,7 @@
 
 #include "Button.h"
 #include "Arduino.h"
+#include "../lib/Timer/Timer.h"
 
 Button::Button (byte pin, unsigned int debounce_delay, unsigned int long_delay)
 {
@@ -15,6 +16,7 @@ Button::Button (byte pin, unsigned int debounce_delay, unsigned int long_delay)
   _pin = pin;
   _debounce_delay = debounce_delay;
   _long_delay = long_delay;
+  Timer t1;
   button_reset ();
 }
 
@@ -25,21 +27,13 @@ Button::check_button_state ()
 
   if (button_state == LOW && _button_press == 0)
     {
-      time_of_last_press = millis ();
+      t1.restart ();
       _button_press = 1;
     }
-
-  // In case that millis() was reseted, write time_of_last_press new.
-  if (millis () < time_of_last_press)
-    {
-      time_of_last_press = millis ();
-    }
-
-  time_since_last_press = millis () - time_of_last_press;
   if (button_state == HIGH && _button_press == 1
-      && time_since_last_press >= _debounce_delay)
+      && t1.t_since_start () >= _debounce_delay)
     {
-      if (time_since_last_press >= _long_delay)
+      if (t1.t_since_start () >= _long_delay)
 	_long_pressed = 1;
       else
 	_short_pressed = 1;
@@ -71,4 +65,5 @@ Button::button_reset ()
   _long_pressed = 0;
   _short_pressed = 0;
   _button_press = 0;
+  button_state = 0;
 }
