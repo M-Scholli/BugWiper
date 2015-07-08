@@ -30,7 +30,7 @@
 #define PIN_TIE_UP		6
 #define PIN_WIPE		5
 //Keys without debounce
-#define KEY_TIGHT		6
+#define KEY_TIGHT		A1
 #define KEY_LOCK		4
 #define UNLOCK_STATE		LOW
 //LED
