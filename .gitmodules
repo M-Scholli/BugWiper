@@ -7,3 +7,6 @@
 [submodule "lib/Timer"]
 	path = lib/Timer
 	url = https://github.com/M-Scholli/Arduino-Timer
+[submodule "lib/Button"]
+	path = lib/Button
+	url = https://github.com/M-Scholli/Arduino-Button/

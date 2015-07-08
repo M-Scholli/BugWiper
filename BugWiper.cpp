@@ -2,7 +2,7 @@
 #include "BugWiper.h"
 
 #include "src/L298.h"
-#include "src/Button.h"
+#include "lib/Button/Button.h"
 #include "src/LED.h"
 #include "src/Wiping.h"
 #include "Arduino.h"
