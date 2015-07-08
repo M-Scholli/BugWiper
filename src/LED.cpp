@@ -18,6 +18,7 @@ Led::Led (byte pin)
   Timer t_led;
   state = 0;
   _duration = 1000;
+  off();
 }
 
 void
