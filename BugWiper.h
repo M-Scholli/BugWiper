@@ -68,5 +68,7 @@ extern L298 motor;
 extern Led led1;
 extern Wiping full_wiping;
 extern Wiping tieing_up;
+extern Button b_tie_up;
+extern Button b_wipe;
 
 #endif /* _BugWiper_H_ */
