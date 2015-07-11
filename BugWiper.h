@@ -51,6 +51,7 @@
 #include "src/L298.h"
 #include "src/LED.h"
 #include "src/Wiping.h"
+#include "lib/Button/Button.h"
 
 #ifdef __cplusplus
 extern "C"
