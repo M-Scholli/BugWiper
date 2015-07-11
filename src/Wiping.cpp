@@ -12,6 +12,7 @@
 #include "L298.h"
 #include "../lib/Timer/Timer.h"
 #include "../lib/EEPROMex/EEPROMex.h"
+#include "../lib/Button/Button.h"
 
 Wiping::Wiping (byte p_start, byte t_min, byte t_max, byte p_delay)
 {
@@ -84,7 +85,11 @@ Wiping::w_wiping (byte direction)
 	  power++;
 	  motor.setPower (power);
 	}
-      //to do: add emergency stop and key override
+      if (b_wipe.button_press () == 1)
+	{
+	  run = 0;
+	}
+      //to do: key / time override
     }
   led1.blink_off ();
   return safe;
